@@ -1,0 +1,113 @@
+/* Resetting margin, padding, and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling the body to act as a flex container, centering its content horizontally and vertically */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensuring minimum viewport height */
+    background: #111; /* Setting the background color */
+}
+
+/* Centering the content horizontally and vertically */
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the animated rings */
+.ring {
+    position: relative;
+    width: 150px; /* Setting width */
+    height: 150px; /* Setting height */
+    border: 4px solid transparent; /* Setting transparent border */
+    border-top: 4px solid #24ecff55; /* Setting gradient effect for top border */
+    border-radius: 50%; /* Making the ring circular */
+    margin: -30px; /* Adjusting position to center the ring */
+    filter: drop-shadow(0 0 10px #24ecff) drop-shadow(0 0 30px #24ecff) drop-shadow(0 0 50px #24ecff); /* Adding glow effect */
+    animation: animate 4s linear infinite; /* Applying rotation animation */
+}
+
+/* Keyframes for ring animation */
+@keyframes animate {
+    0% {
+        transform: rotate(0deg); /* Starting rotation */
+    }
+
+    100% {
+        transform: rotate(360deg); /* Ending rotation */
+    }
+}
+
+/* Inserting FontAwesome icon inside the ring */
+.ring::before {
+    content: "\f135"; /* FontAwesome icon */
+    position: absolute;
+    top: 10px;
+    right: -4px;
+    rotate: 90deg; /* Rotating the icon */
+    font-family: fontAwesome; /* Setting FontAwesome font family */
+    color: #24ecff; /* Setting icon color */
+    font-size: 2em; /* Setting icon size */
+}
+
+/* Styling for the second ring */
+.ring:nth-child(2) {
+    border: 4px solid transparent;
+    border-left: 4px solid #93ff2d; /* Setting gradient effect for left border */
+    filter: drop-shadow(0 0 10px #93ff2d) drop-shadow(0 0 30px #93ff2d) drop-shadow(0 0 50px #93ff2d); /* Adding glow effect */
+    animation: animate2 4s linear infinite; /* Applying rotation animation */
+    animation-delay: -1s; /* Delaying animation */
+}
+
+/* Inserting FontAwesome icon inside the second ring */
+.ring:nth-child(2)::before {
+    content: "\f072"; /* FontAwesome icon */
+    top: initial;
+    bottom: -6px;
+    left: 12px;
+    right: initial;
+    rotate: 45deg; /* Rotating the icon */
+    color: #93ff2d; /* Setting icon color */
+}
+
+/* Keyframes for the second ring animation */
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg); /* Starting rotation */
+    }
+
+    100% {
+        transform: rotate(0deg); /* Ending rotation */
+    }
+}
+
+/* Styling for the third ring */
+.ring:nth-child(3) {
+    position: absolute;
+    top: -66.66px;
+    border: 4px solid transparent;
+    border-left: 4px solid #ff1d6c55; /* Setting gradient effect for left border */
+    filter: drop-shadow(0 0 10px #ff1d6c) drop-shadow(0 0 30px #ff1d6c) drop-shadow(0 0 50px #ff1d6c); /* Adding glow effect */
+    animation: animate2 4s linear infinite; /* Applying rotation animation */
+    animation-delay: -3s; /* Delaying animation */
+}
+
+/* Inserting FontAwesome icon inside the third ring */
+.ring:nth-child(3)::before {
+    content: "\e518"; /* FontAwesome icon */
+    top: initial;
+    bottom: -6px;
+    left: 12px;
+    right: initial;
+    rotate: 135deg; /* Rotating the icon */
+    color: #ff1d6c; /* Setting icon color */
+}
