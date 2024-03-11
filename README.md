@@ -22,7 +22,7 @@ The challenge was to create an animated visual effect using CSS that includes ro
 
 ### Demo
 
-[View Demo](#) (Replace with the link to your live demo if available)
+[View Demo](#) (Coming soon)
 
 ### Links
 
